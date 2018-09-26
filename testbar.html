@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function fun(){
+			var progDiv = document.getElementById('myProgress');
+
+			var width = 0;
+			var id = setInterval(frame, 10);
+			console.log("Width prog:: ");
+			function frame() {
+			    if (width == 100) {
+			      clearInterval(id);
+			    } else {
+			      width++; 
+			      console.log(width);
+			      progDiv.style.width = width + '%';
+			    }
+			  }	
+		}
+		
+	</script>
+	<style>
+#myProgress {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  background-color: #ddd;
+}
+
+#myBar {
+  background-color: #4CAF50;
+  width: 10px;
+  height: 30px;
+  position: absolute;
+}
+</style>
+</head>
+<body>
+
+	<button onclick="fun()">Click</button>
+	<div id="myProgress" onmouseover="fun()"></div>
+
+</body>
+</html>
