@@ -1,8 +1,12 @@
-var http = require('http');
-var url = require('url');
+const express = require('express');
 
-http.createServer( function(req,res) {
-	var resQ = url.parse(req.url,true).query;
-	alert(resQ);
-	res.end();
+const app = express();
+
+
+app.get('/', (req, res) => {
+    res.send("Hello...!");
+});
+
+app.listen(3004, () => {
+    console.log('Listening the port 3004..!');
 });
